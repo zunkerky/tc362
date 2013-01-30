@@ -1,0 +1,3 @@
+Server IP address: http://166.78.1.227/
+
+The public web folder is stored in the default location at /var/www
