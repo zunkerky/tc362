@@ -1,0 +1,41 @@
+Scavenger Hunt Questions:
+
+1. How many files are in /usr/bin directory? 574
+
+On my fresh installation of Ubuntu server 12.04 there are 574 files in the /usr/bin directory. 
+I found a command to run on the website nixcraft.com, the command is ls -lA | wc -l, this command will display the number of all files (including hidden) under a directory.
+
+
+2. Identify the server process with the highest memory usage. whoopsie
+
+The process with the highest memory usage on my server is the whoopsie process. It is using 1% of system memory. Below whoopsie is nova-agent.py with
+0.9% of memory usage. After doing some research I found that the whoopsie process is the "Ubuntu Error Reporting" dameon. It is installed by default and when an application crashes whoopsie collects the data and can send the crash report to Ubuntu/Canonical to notify the developers of the error.
+
+
+
+3. What is your server’s timezone? UTC
+
+My servers timezone is set to UTC by default. I found this by simply entering "date" into the terminal. After doing so the terminal displayed today's date and timezone. I found this command on the website www.basicconfig.com/linux/linux-date-command-tutorial. It is possible to change the date and time information by using the following commands:
+
+date [OPTION]... [+FORMAT]
+date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+
+
+
+4. How many default groups does your Ubuntu distribution have? 51
+
+By default I found 51 groups in my Ubuntu distribution. I found a way to list groups using the command cat /etc/group in a thread on the site:
+
+http://www.linuxquestions.org/questions/linux-newbie-8/command-to-list-all-groups-567896/
+
+
+
+
+5. Download, un-tar and execute the following PHP file (362.tar) from the command line on your server. What is the output?
+
+The output of the php file is the following: 0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181
+After looking up the number I found out that the output is the Fibonacci sequence.
+Originally I used wget to download the .tar file to my home directory. After doing so I attempted to untar the file but after every attempt I would get the error message 	gzip: stdin: not in gzip format
+					tar: Child returned status 1
+					tar: Exiting with failure status due to previous errors
+After doing some research I found that it may be a corrupt download, but I also noticed that the file permissions were rw-r-r. After attempting to get the file to extract, I extracted the php file on my personal computer and just ran the php script on the server to get the output. I am still uncertain why I was getting the error message, although I'm thinking it has something to do with the file permissions.						
